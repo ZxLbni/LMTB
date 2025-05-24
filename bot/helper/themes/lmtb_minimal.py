@@ -2,10 +2,10 @@
 class LMTBStyle:
     # ----------------------
     # async def start(client, message) ---> __main__.py
-    ST_BN1_NAME = 'Repo'
-    ST_BN1_URL = 'https://github.com/ZxLbni/LMTB/fork'
-    ST_BN2_NAME = 'Updates'
-    ST_BN2_URL = 'https://t.me/Noob_Project'
+    ST_BN1_NAME = 'Join Channel 🚀'
+    ST_BN1_URL = 'https://t.me/noob_project'
+    ST_BN2_NAME = 'Owner ☀️'
+    ST_BN2_URL = 'https://t.me/l_abani'
     ST_MSG = '''<i>This bot can mirror all your links|files|torrents to Google Drive or any rclone cloud or to telegram or to ddl servers.</i>
 <b>Type {help_command} to get a list of available commands</b>'''
     ST_BOTPM = '''<i>Now, This bot will send all your files and links here. Start Using ...</i>'''
