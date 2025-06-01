@@ -140,9 +140,12 @@ def handleIndex(index, dic):
 
 def get_progress_bar_string(pct):
     pct = float(str(pct).strip('%'))
-    ring = ['◐', '◓', '◑', '◒']  # Rotating arc segments
-    idx = int((pct / 100) * len(ring)) % len(ring)
-    return f"[{ring[idx]}] {int(pct)}%"
+    total = 10
+    pointer = int((pct / 100) * total)
+    dial = ['◯'] * total
+    if pointer < total:
+        dial[pointer] = '⬤'
+    return f"({''.join(dial)}) {int(pct)}%"
 
 
 def get_all_versions():
