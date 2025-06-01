@@ -140,9 +140,9 @@ def handleIndex(index, dic):
 
 def get_progress_bar_string(pct):
     pct = float(str(pct).strip('%'))
-    total = 10
-    filled = int((pct / 100) * total)
-    return f"[{'✓' * filled}{'.' * (total - filled)}]"
+    ring = ['◐', '◓', '◑', '◒']  # Rotating arc segments
+    idx = int((pct / 100) * len(ring)) % len(ring)
+    return f"[{ring[idx]}] {int(pct)}%"
 
 
 def get_all_versions():
