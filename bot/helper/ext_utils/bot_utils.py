@@ -140,12 +140,14 @@ def handleIndex(index, dic):
 
 def get_progress_bar_string(pct):
     pct = float(str(pct).strip('%'))
-    total = 10
-    pointer = int((pct / 100) * total)
-    dial = ['◯'] * total
-    if pointer < total:
-        dial[pointer] = '⬤'
-    return f"({''.join(dial)}) {int(pct)}%"
+    p = min(max(pct, 0), 100)
+    cFull = int(p // 8)
+    cPart = int(p % 8 - 1)
+    p_str = '■' * cFull
+    if cPart >= 0:
+        p_str += ['▤', '▥', '▦', '▧', '▨', '▩', '■'][cPart]
+    p_str += '□' * (12 - cFull)
+    return f"[{p_str}]"
 
 
 def get_all_versions():
